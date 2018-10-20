@@ -1,0 +1,7 @@
+{{ with $.Params.gs_id }} 
+  {{ range where $.Site.Data.citecount "id" "==" $.Params.gs_id }} 
+    {{ if ge .citecount 1 }} 
+      Cited by {{ .citecount }} 
+    {{ end }} 
+  {{ end }} 
+{{ end }}
